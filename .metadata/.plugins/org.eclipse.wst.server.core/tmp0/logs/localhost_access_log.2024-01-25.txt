@@ -1,0 +1,4 @@
+127.0.0.1 - - [25/Jan/2024:09:37:49 +0100] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [25/Jan/2024:09:37:51 +0100] "GET /3EjeRestDatajpa/WEB-INF/classes/com/jao/spring/ejemplo/ObRestDatajpaApplication.java HTTP/1.1" 404 610
+0:0:0:0:0:0:0:1 - - [25/Jan/2024:09:43:01 +0100] "GET /holaworld/ HTTP/1.1" 404 701
+127.0.0.1 - - [25/Jan/2024:11:58:28 +0100] "GET / HTTP/1.1" 404 687

@@ -1,0 +1,16 @@
+package com.jao.spring.test;
+
+import org.junit.jupiter.api.Test;
+
+import com.jao.spring.service.CalculatorService;
+
+public class CalculatorTest {
+	@Test
+	void name(){
+		CalculatorService service = new CalculatorService();
+		double result = service.sum(5,5);
+		double num1=10;
+		assertEquals(num1,result);
+	}
+
+}

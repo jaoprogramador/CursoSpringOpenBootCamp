@@ -1,0 +1,5 @@
+#Tomcat publish data
+#Tue Jan 30 10:46:28 CET 2024
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\Guillermo\\.m2\\repository\\org\\apache\\tomcat\\embed\\tomcat-embed-websocket\\9.0.53\\tomcat-embed-websocket-9.0.53.jar=WEB-INF/lib/tomcat-embed-websocket-9.0.53.jar
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\Guillermo\\.m2\\repository\\org\\apache\\tomcat\\embed\\tomcat-embed-el\\9.0.53\\tomcat-embed-el-9.0.53.jar=WEB-INF/lib/tomcat-embed-el-9.0.53.jar
+org.eclipse.jst.j2ee.server\:/binary\:C\:\\Users\\Guillermo\\.m2\\repository\\org\\springframework\\spring-web\\5.3.10\\spring-web-5.3.10.jar=WEB-INF/lib/spring-web-5.3.10.jar

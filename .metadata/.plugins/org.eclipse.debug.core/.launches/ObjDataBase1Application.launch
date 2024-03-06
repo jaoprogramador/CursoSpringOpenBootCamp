@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/objDataBase1/src/main/java/com/jao/spring/objDataBase1/ObjDataBase1Application.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.jao.spring.objDataBase1.ObjDataBase1Application"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="objDataBase1"/>
+</launchConfiguration>
