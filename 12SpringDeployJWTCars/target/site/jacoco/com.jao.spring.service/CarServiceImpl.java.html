@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CarServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">12SpringDeployJWTCars</a> &gt; <a href="index.source.html" class="el_package">com.jao.spring.service</a> &gt; <span class="el_source">CarServiceImpl.java</span></div><h1>CarServiceImpl.java</h1><pre class="source lang-java linenums">package com.jao.spring.service;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
+import org.springframework.util.StringUtils;
+
+import com.jao.spring.domain.Car;
+import com.jao.spring.repository.CarRepository;
+
+@Service
+public class CarServiceImpl implements CarService {
+
+<span class="nc" id="L20">	private static final Integer MIN_DOORS = 3;</span>
+
+<span class="nc" id="L22">	private final Logger log = LoggerFactory.getLogger(CarServiceImpl.class);</span>
+	
+	private CarRepository carRepository;
+	
+<span class="nc" id="L26">	public CarServiceImpl(CarRepository carRepository) {</span>
+<span class="nc" id="L27">		this.carRepository = carRepository;</span>
+<span class="nc" id="L28">	}</span>
+	
+	@Override
+	public List&lt;Car&gt; findAll() {
+<span class="nc" id="L32">		log.info(&quot;Executing findAll Cars&quot;);</span>
+<span class="nc" id="L33">		return this.carRepository.findAll();</span>
+	}
+
+	@Override
+	public Optional&lt;Car&gt; findById(Long id) {
+<span class="nc" id="L38">		log.info(&quot;Executing findById&quot;);</span>
+<span class="nc" id="L39">		return this.carRepository.findById(id);</span>
+	}
+
+	@Override
+	public List&lt;Car&gt; findByDoors(Integer doors) {
+<span class="nc" id="L44">		log.info(&quot;Searching cars by doors&quot;);</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">		if (doors &lt; MIN_DOORS) {</span>
+<span class="nc" id="L46">			log.warn(&quot;Trying to sarch less than allowed doors&quot;);</span>
+<span class="nc" id="L47">			return new ArrayList&lt;&gt;();</span>
+		}
+		
+<span class="nc" id="L50">		return this.carRepository.findByDoors(doors);</span>
+	}
+
+	@Override
+	public Long count() {
+<span class="nc" id="L55">		log.info(&quot;Get total number of cars&quot;);</span>
+<span class="nc" id="L56">		return this.carRepository.count();</span>
+	}
+
+	@Override
+	public Car save(Car car) {
+<span class="nc" id="L61">		log.info(&quot;Creating / Updating car&quot;);</span>
+		// pre
+<span class="nc bnc" id="L63" title="All 2 branches missed.">		if(!this.validateCar(car)) </span>
+<span class="nc" id="L64">			return null;</span>
+		
+		// actions
+		// find template from db
+<span class="nc" id="L68">		Car carDB = this.carRepository.save(car);</span>
+		
+		// post:
+		// enviar notificacion
+		// this.notificationService(NotificationType.CREATION, car);
+		
+<span class="nc" id="L74">		return carDB;</span>
+	}
+	
+	private boolean validateCar(Car car) {
+		// car null validation
+<span class="nc bnc" id="L79" title="All 2 branches missed.">		if (car == null) {</span>
+<span class="nc" id="L80">			log.warn(&quot;Trying to create null car&quot;);</span>
+<span class="nc" id="L81">			return false;</span>
+		}
+		// num doors validation
+<span class="nc bnc" id="L84" title="All 4 branches missed.">		if (car.getDoors() == null || car.getDoors() &lt; MIN_DOORS) {</span>
+<span class="nc" id="L85">			log.warn(&quot;Trying to create car with not allowed number of doors&quot;);</span>
+<span class="nc" id="L86">			return false;</span>
+		}
+		// color validation
+		// .... 
+		
+<span class="nc" id="L91">		return true;</span>
+	}
+
+	@Override
+	public void deleteById(Long id) {
+<span class="nc" id="L96">		log.info(&quot;Deleting car by id&quot;);</span>
+<span class="nc bnc" id="L97" title="All 6 branches missed.">		if (id == null || id &lt; 0 || id == 0) {</span>
+<span class="nc" id="L98">			log.warn(&quot;Trying to delete car with wrong id&quot;);</span>
+<span class="nc" id="L99">			return;</span>
+		}
+
+		try {
+<span class="nc" id="L103">			this.carRepository.deleteById(id);</span>
+<span class="nc" id="L104">		} catch (Exception e) {</span>
+<span class="nc" id="L105">			log.error(&quot;Error trying to delete car by id {}&quot;, id, e);</span>
+<span class="nc" id="L106">		}</span>
+
+<span class="nc" id="L108">	}</span>
+
+	@Override
+	public void deleteAll() {
+<span class="nc" id="L112">		log.info(&quot;Deleting cars&quot;);</span>
+<span class="nc" id="L113">		this.carRepository.deleteAll();</span>
+<span class="nc" id="L114">	}</span>
+
+	@Override
+	public void deleteAll(List&lt;Car&gt; cars) {
+<span class="nc" id="L118">		log.info(&quot;Deleting car by id&quot;);</span>
+<span class="nc bnc" id="L119" title="All 2 branches missed.">		if (CollectionUtils.isEmpty(cars)) {</span>
+<span class="nc" id="L120">			log.warn(&quot;Trying to delete an empty or null car list&quot;);</span>
+<span class="nc" id="L121">			return;</span>
+		}
+<span class="nc" id="L123">		this.carRepository.deleteAll(cars);</span>
+<span class="nc" id="L124">	}</span>
+
+	@Override
+	public void deleteAllById(List&lt;Long&gt; ids) {
+<span class="nc" id="L128">		log.info(&quot;Deleting car by id&quot;);</span>
+<span class="nc bnc" id="L129" title="All 2 branches missed.">		if (CollectionUtils.isEmpty(ids)) {</span>
+<span class="nc" id="L130">			log.warn(&quot;Trying to delete an empty or null car list&quot;);</span>
+<span class="nc" id="L131">			return;</span>
+		}
+<span class="nc" id="L133">		this.carRepository.deleteAllById(ids);</span>
+		
+<span class="nc" id="L135">	}</span>
+
+	@Override
+	public List&lt;Car&gt; findByManufacturerAndModel(String manufacturer, String model) {
+		
+<span class="nc bnc" id="L140" title="All 4 branches missed.">		if(!StringUtils.hasLength(manufacturer) || !StringUtils.hasLength(model))</span>
+<span class="nc" id="L141">			return new ArrayList&lt;&gt;();</span>
+			
+<span class="nc" id="L143">		return this.carRepository.findByManufacturerAndModel(manufacturer, model);</span>
+	}
+
+	@Override
+	public List&lt;Car&gt; findByDoorsGreaterThanEqual(Integer doors){
+<span class="nc bnc" id="L148" title="All 4 branches missed.">		if(doors == null || doors &lt; 0)</span>
+<span class="nc" id="L149">			return new ArrayList&lt;&gt;();</span>
+		
+<span class="nc" id="L151">		return this.carRepository.findByDoorsGreaterThanEqual(doors);</span>
+	}
+
+	@Override
+	public List&lt;Car&gt; findByModelContaining(String model) {
+<span class="nc" id="L156">		return this.carRepository.findByModelContaining(model);</span>
+	}
+
+	@Override
+	public List&lt;Car&gt; findByYearIn(List&lt;Integer&gt; years) {
+<span class="nc" id="L161">		return this.carRepository.findByYearIn(years);</span>
+	}
+
+	@Override
+	public List&lt;Car&gt; findByYearBetween(Integer startYear, Integer endYear) {
+<span class="nc" id="L166">		return this.carRepository.findByYearBetween(startYear, endYear);</span>
+	}
+
+	@Override
+	public List&lt;Car&gt; findByReleaseDateBetween(LocalDate startDate, LocalDate endDate) {
+<span class="nc" id="L171">		return this.carRepository.findByReleaseDateBetween(startDate, endDate);</span>
+	}
+
+	@Override
+	public List&lt;Car&gt; findByAvailableTrue() {
+<span class="nc" id="L176">		return this.carRepository.findByAvailableTrue();</span>
+
+	}
+
+	@Override
+	public Long deleteAllByAvailableFalse() {
+<span class="nc" id="L182">		return this.carRepository.deleteAllByAvailableFalse();</span>
+	}
+	
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
