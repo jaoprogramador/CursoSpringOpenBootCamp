@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+	<bean id="serviceJAO" class="com.jao.spring.ejemplo.beans.MensajeService" scope="prototype">
+    </bean>
+    <bean id="gestorSaludos" class="com.jao.spring.ejemplo.beans.GestorSaludos" scope="prototype">
+    	<constructor-arg name="saludo" ref="saludo" />
+        <constructor-arg name="idioma" value="Euskera" />
+    </bean>
+     <bean id="saludo" class="com.jao.spring.ejemplo.beans.Saludo" scope="prototype">
+    </bean>
+</beans>

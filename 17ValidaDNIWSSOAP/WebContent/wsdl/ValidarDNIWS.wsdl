@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.validardni.soap.ws.jao.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.validardni.soap.ws.jao.com" xmlns:intf="http://service.validardni.soap.ws.jao.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.validardni.soap.ws.jao.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="validarDNI">
+    <complexType>
+     <sequence>
+      <element name="numeroDNI" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="validarDNIResponse">
+    <complexType>
+     <sequence>
+      <element name="validarDNIReturn" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="valDNI">
+    <complexType>
+     <sequence>
+      <element name="dni" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="valDNIResponse">
+    <complexType>
+     <sequence>
+      <element name="valDNIReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="valDNIRequest">
+
+      <wsdl:part element="impl:valDNI" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="valDNIResponse">
+
+      <wsdl:part element="impl:valDNIResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="validarDNIResponse">
+
+      <wsdl:part element="impl:validarDNIResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="validarDNIRequest">
+
+      <wsdl:part element="impl:validarDNI" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ValidarDNIWS">
+
+      <wsdl:operation name="validarDNI">
+
+         <wsdl:input message="impl:validarDNIRequest" name="validarDNIRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:validarDNIResponse" name="validarDNIResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="valDNI">
+
+         <wsdl:input message="impl:valDNIRequest" name="valDNIRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:valDNIResponse" name="valDNIResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ValidarDNIWSSoapBinding" type="impl:ValidarDNIWS">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="validarDNI">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="validarDNIRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="validarDNIResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="valDNI">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="valDNIRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="valDNIResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ValidarDNIWSService">
+
+      <wsdl:port binding="impl:ValidarDNIWSSoapBinding" name="ValidarDNIWS">
+
+         <wsdlsoap:address location="http://localhost:10931/17ValidaDNIWSSOAP/services/ValidarDNIWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

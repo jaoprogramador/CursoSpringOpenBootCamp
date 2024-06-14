@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="true" key="J2EE_EXPORT_OVERWRITE"/>
+	<item value="true" key="J2EE_EXPORT_SOURCE"/>
+	<list key="J2EE_EXPORT_JST_EJB">
+		<item value="C:\Users\Guillermo\workspace\EJBInvoquer\lib\MsgFromServerEJB.jar"/>
+		<item value="C:\Users\Guillermo\workspace\EJBInvoquer\lib\19EJBSessionDocumentos.jar"/>
+		<item value="C:\Users\Guillermo\workspace\20EJBInvoquer\lib\19EJBSessionDocumentos.jar"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_EAR">
+		<item value="C:\Users\Guillermo\workspace\MsgFromServerEAR.ear"/>
+	</list>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v9.0"/>
+		<item value="WildFly 10.x Runtime"/>
+		<item value="NULL_RUNTIME"/>
+	</list>
+</section>

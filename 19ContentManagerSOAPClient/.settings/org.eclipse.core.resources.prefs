@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/com/jao/contentmanager/documentos/model/DocumentoDTO.java=UTF-8
+encoding//src/com/jao/contentmanager/documentos/service/Documentos.java=UTF-8
+encoding//src/com/jao/contentmanager/documentos/service/DocumentosService.java=UTF-8
+encoding//src/com/jao/contentmanager/documentos/service/DocumentosServiceLocator.java=UTF-8
+encoding//src/com/jao/contentmanager/documentos/service/DocumentosSoapBindingStub.java=UTF-8

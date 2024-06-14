@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ValidarDNIWSService WSDL service -->
+
+  <service name="ValidarDNIWS" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.validardni.soap.ws.jao.com"/>
+      <parameter name="wsdlServiceElement" value="ValidarDNIWSService"/>
+      <parameter name="schemaQualified" value="http://service.validardni.soap.ws.jao.com"/>
+      <parameter name="wsdlServicePort" value="ValidarDNIWS"/>
+      <parameter name="className" value="com.jao.ws.soap.validardni.service.ValidarDNIWS"/>
+      <parameter name="wsdlPortType" value="ValidarDNIWS"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service.validardni.soap.ws.jao.com" xmlns:retNS="http://service.validardni.soap.ws.jao.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="validarDNI" qname="operNS:validarDNI" returnQName="retNS:validarDNIReturn" returnType="rtns:anyType" soapAction="">
+        <parameter xmlns:pns="http://service.validardni.soap.ws.jao.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:numeroDNI" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://service.validardni.soap.ws.jao.com" xmlns:retNS="http://service.validardni.soap.ws.jao.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="valDNI" qname="operNS:valDNI" returnQName="retNS:valDNIReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://service.validardni.soap.ws.jao.com" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:dni" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="validarDNI valDNI"/>
+
+      <typeMapping xmlns:ns="http://service.validardni.soap.ws.jao.com" qname="ns:&gt;valDNI" type="java:com.jao.ws.soap.validardni.service.ValDNI" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://service.validardni.soap.ws.jao.com" qname="ns:&gt;valDNIResponse" type="java:com.jao.ws.soap.validardni.service.ValDNIResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

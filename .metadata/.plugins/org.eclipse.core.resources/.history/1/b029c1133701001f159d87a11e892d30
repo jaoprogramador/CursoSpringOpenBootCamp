@@ -1,0 +1,24 @@
+<project name="CompilarProyecto" default="compile">
+
+    <property name="project.dir" value="C:/Users/Guillermo/workspace/19EJBSessionDocumentos"/>
+    <property name="output.dir" value="C:/Users/Guillermo/workspace/EJBInvoquer/lib"/>
+    <property name="lib.dir" value="${project.dir}/ejbModule/META-INF/lib"/>
+    <property name="wildfly.home" value="C:/Users/Guillermo/wildfly-15.0.1.Final"/>
+
+    <target name="compile" description="Compile Java source files">
+        <mkdir dir="${output.dir}"/>
+        <javac srcdir="${project.dir}/ejbModule" destdir="${output.dir}" includeantruntime="false">
+            <classpath>
+                <!-- Add your project dependencies -->
+                <fileset dir="${lib.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+                <!-- Include Wildfly libraries -->
+                <fileset dir="${wildfly.home}/modules" includes="**/*.jar"/>
+                <!-- Add any other required JARs or libraries -->
+                <pathelement location="C:/Program Files/Java/jdk-1.8/lib/tools.jar"/>
+            </classpath>
+        </javac>
+    </target>
+
+</project>

@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/com/jao/ws/soap/validardni/service/ValDNI.java=UTF-8
+encoding//src/com/jao/ws/soap/validardni/service/ValDNIResponse.java=UTF-8
+encoding//src/com/jao/ws/soap/validardni/service/ValidarDNIWS.java=UTF-8
+encoding//src/com/jao/ws/soap/validardni/service/ValidarDNIWSService.java=UTF-8
+encoding//src/com/jao/ws/soap/validardni/service/ValidarDNIWSServiceLocator.java=UTF-8
+encoding//src/com/jao/ws/soap/validardni/service/ValidarDNIWSSoapBindingStub.java=UTF-8

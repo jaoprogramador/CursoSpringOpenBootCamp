@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="19EJBSessionDocumentosEAR">
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+        <dependent-module archiveName="19EJBSessionDocumentos.jar" deploy-path="/" handle="module:/resource/19EJBSessionDocumentos/19EJBSessionDocumentos">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="EJBInvoquer.jar" deploy-path="/lib" handle="module:/resource/EJBInvoquer/EJBInvoquer">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="axis-1.4.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Guillermo/workspace/19EJBSessionDocumentos/ejbModule/META-INF/lib/axis-1.4.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="modelmapper-2.4.3.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Guillermo/workspace/19EJBSessionDocumentos/ejbModule/META-INF/lib/modelmapper-2.4.3.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="19ContentManagerSOAPClient.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Guillermo/workspace/19EJBSessionDocumentos/ejbModule/META-INF/lib/19ContentManagerSOAPClient.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.persistence-2.1.0.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Guillermo/workspace/19EJBSessionDocumentos/ejbModule/META-INF/lib/javax.persistence-2.1.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="javax.persistence-api-2.2.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Guillermo/workspace/19EJBSessionDocumentos/ejbModule/META-INF/lib/javax.persistence-api-2.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="springfox-swagger2-3.0.0.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Guillermo/workspace/19EJBSessionDocumentos/ejbModule/META-INF/lib/springfox-swagger2-3.0.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="postgresql-9.4-1206-jdbc42.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Guillermo/workspace/19EJBSessionDocumentos/ejbModule/META-INF/lib/postgresql-9.4-1206-jdbc42.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="commons-discovery-0.5.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Guillermo/workspace/19EJBSessionDocumentos/ejbModule/META-INF/lib/commons-discovery-0.5.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="wsdl4j-1.6.2.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/Users/Guillermo/workspace/19EJBSessionDocumentos/ejbModule/META-INF/lib/wsdl4j-1.6.2.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="log4j-1.2.17.jar" deploy-path="/lib" handle="module:/classpath/lib/19EJBSessionDocumentos/ejbModule/META-INF/lib/log4j-1.2.17.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

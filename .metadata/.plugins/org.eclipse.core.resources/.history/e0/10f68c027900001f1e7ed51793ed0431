@@ -1,0 +1,29 @@
+<project name="DeployEAR" basedir="." default="deploy-and-start">
+
+    <!-- Definición de propiedades -->
+    <property name="ear.source.dir" value="C:/Users/Guillermo/workspace/19EJBSessionDocumentosEAR"/>
+    <property name="wildfly.dir" value="C:/Users/Guillermo/wildfly-15.0.1.Final"/>
+    <property name="wildfly.deploy.dir" value="${wildfly.dir}/standalone/deployments"/>
+    <property name="ear.file.name" value="nombre-del-archivo.ear"/>
+
+    <!-- Target para copiar el archivo EAR al directorio de despliegue de WildFly -->
+    <target name="deploy-ear">
+        <echo message="Copiando el archivo EAR a la carpeta de despliegue de WildFly..."/>
+        <copy file="${ear.source.dir}/${ear.file.name}" todir="${wildfly.deploy.dir}"/>
+    </target>
+
+    <!-- Target para iniciar el servidor WildFly -->
+    <target name="start-wildfly">
+        <echo message="Iniciando el servidor WildFly..."/>
+        <exec executable="cmd" dir="${wildfly.dir}/bin">
+            <arg value="/c"/>
+            <arg value="standalone.bat"/>
+        </exec>
+    </target>
+
+    <!-- Target que ejecuta la copia del EAR y luego inicia WildFly -->
+    <target name="deploy-and-start" depends="deploy-ear,start-wildfly">
+        <echo message="Se ha completado el despliegue del archivo EAR y se ha iniciado el servidor WildFly."/>
+    </target>
+
+</project>

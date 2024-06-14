@@ -1,0 +1,61 @@
+<!--project name="CompilarProyecto" default="compile">
+
+    <property name="project.dir" value="C:/Users/Guillermo/workspace/19EJBSessionDocumentos"/>
+    <property name="output.dir" value="C:/Users/Guillermo/workspace/EJBInvoquer/lib"/>
+    <property name="lib.dir" value="${project.dir}/ejbModule/META-INF/lib"/>
+    <property name="wildfly.home" value="C:/Users/Guillermo/wildfly-15.0.1.Final"/>
+
+    <target name="compile" description="Compile Java source files">
+        <mkdir dir="${output.dir}"/>
+        <javac srcdir="${project.dir}/ejbModule" destdir="${output.dir}" includeantruntime="false">
+            <classpath>
+            
+                <fileset dir="${lib.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+            
+                <fileset dir="${wildfly.home}/modules" includes="**/*.jar"/>
+            
+                <pathelement location="C:/Program Files/Java/jdk-1.8/lib/tools.jar"/>
+            </classpath>
+        </javac>
+    </target>
+<echo message="Move the generated JAR to the desired location with the desired name"/>
+      
+    <target name="moveJar" depends="compile">
+        <move file="${output.dir}/ejbModule.jar" tofile="${output.dir}/19EJBSessionDocumentos.jar"/>
+    </target>
+
+</project-->
+
+
+
+<project name="CompilacionEJB" default="exportJar">
+
+    <!-- Definir las rutas -->
+    <property name="project.ejb.dir" value="C:/Users/Guillermo/workspace/19EJBSessionDocumentos"/>
+    <property name="output.dir" value="C:/Users/Guillermo/workspace/EJBInvoquer/lib"/>
+    <property name="jar.name" value="19EJBSessionDocumentos.jar"/>
+
+    <!-- Compilar el proyecto EJB y generar el JAR -->
+    <target name="exportJar" description="Exportar el proyecto EJB como un archivo JAR">
+        <mkdir dir="${output.dir}"/>
+        <javac srcdir="${project.ejb.dir}/src" destdir="${output.dir}" includeantruntime="false">
+            <classpath>
+                <fileset dir="${lib.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+                <!-- Incluir las bibliotecas de Wildfly -->
+                <fileset dir="${wildfly.home}/modules" includes="**/*.jar"/>
+                <!-- Agregar cualquier otra JAR o biblioteca necesaria -->
+                <pathelement location="C:/Program Files/Java/jdk-1.8/lib/tools.jar"/>
+            </classpath>
+        </javac>
+
+        <!-- Generar el archivo JAR -->
+        <jar destfile="${output.dir}/${jar.name}" basedir="${output.dir}"/>
+    </target>
+
+</project>
+
+

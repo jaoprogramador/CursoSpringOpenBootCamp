@@ -1,0 +1,4 @@
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Comit inicial proyecto 1</message>\r\n<message>voy a probar con una URL EXTERNA</message>\r\n<message>ajuste URL Interna sin password</message>\r\n<message>ajuste URL a BD con usuario y pass en URL</message>\r\n<message>Ajustar URL de BD con ip interna de render</message>\r\n<message>subir cambios en datasource</message>\r\n<message>cambio en conexion de tipo interna xq est\u00E1 en el mismo proveedor la&\#x0A;aplicacion y la BD</message>\r\n<message>cambio en la conexion de BD como externo</message>\r\n<message>cambios en aplication.properties datasource</message>\r\n<message>subir el jar</message>\r\n</messages>
+eclipse.preferences.version=1
+resourcehistory_graph_split=500,500
+resourcehistory_rev_split=700,300

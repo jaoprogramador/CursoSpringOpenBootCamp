@@ -1,0 +1,57 @@
+<project name="19EJBSessionDocumentos" default="deploy" basedir="C:/Users/Guillermo/workspace/19EJBSessionDocumentos">
+
+    <!-- Definir propiedades -->
+    <property name="ejb.project.dir" value="${basedir}"/>
+    <property name="build.dir" value="${ejb.project.dir}/bin"/>
+    <property name="jar.destination.dir" value="C:/Users/Guillermo/workspace/EJBInvoquer/lib"/>
+    <property name="ear.destination.dir" value="C:/Users/Guillermo/wildfly-15.0.1.Final/standalone/deployments"/>
+    
+    <!-- Agregar las bibliotecas del JDK y WildFly al classpath a-->
+    <path id="classpath">
+        <!-- Bibliotecas del JDK -->
+        <fileset dir="C:/Program Files/Java/jdk-1.8/lib">
+            <include name="*.jar"/>
+        </fileset>
+        <fileset dir="C:/Program Files/Java/jdk-1.8/jre/lib">
+            <include name="*.jar"/>
+        </fileset>
+        <!-- Bibliotecas de WildFly -->
+        <fileset dir="C:/Users/Guillermo/wildfly-15.0.1.Final/modules/system/layers/base">
+            <include name="javax/**/*"/>
+        </fileset>
+    	<!-- Bibliotecas del proyecto: log4j, axis, modelmapper, postgresql, wsdl, persistencia, clientEJB -->
+    	<fileset dir="C:/Users/Guillermo/workspace/19EJBSessionDocumentos/ejbModule/META-INF/lib">
+            <include name="*.jar"/> <!-- Incluye todos los archivos JAR en la carpeta lib -->
+        </fileset>
+        <fileset dir="C:/Program Files/Java/jdk-1.8/lib">
+            <include name="*.jar"/> <!-- Incluye todos los archivos JAR en la carpeta lib del JDK -->
+        </fileset>
+    </path>
+    
+    <!-- Compilar el proyecto -->
+    <target name="compile">
+        <mkdir dir="${build.dir}"/>
+        <javac srcdir="${ejb.project.dir}/ejbModule" destdir="${build.dir}" includeantruntime="false" encoding="UTF-8">
+            <classpath refid="classpath"/>
+        </javac>
+    </target>
+
+    <!-- Crear el archivo JAR -->
+    <target name="create-jar" depends="compile">
+        <jar destfile="${jar.destination.dir}/19EJBSessionDocumentos.jar" basedir="${build.dir}"/>
+    </target>
+
+    <!-- Desplegar el EAR -->
+	<target name="deploy" depends="create-jar">
+		<copy todir="C:/Users/Guillermo/wildfly-15.0.1.Final/standalone/deployments">
+			        <fileset dir="${ear.destination.dir}">
+			            <include name="19EJBSessionDocumentosEAR.ear"/>
+			        </fileset>
+			    </copy>
+	    <!-- Puedes agregar más instrucciones aquí según sea necesario para el despliegue -->
+	    
+	</target>
+	
+	
+
+</project>

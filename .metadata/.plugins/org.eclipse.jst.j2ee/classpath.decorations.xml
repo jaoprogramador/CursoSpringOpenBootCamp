@@ -1,0 +1,7 @@
+<classpath>
+  <container id="org.eclipse.jst.j2ee.internal.module.container">
+    <entry id="/19EJBSessionDocumentos/ejbModule/META-INF/lib/log4j-api-2.23.1.jar">
+      <source-attachment-path>/19EJBSessionDocumentos/ejbModule/META-INF/lib/log4j-api-2.23.1.jar</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

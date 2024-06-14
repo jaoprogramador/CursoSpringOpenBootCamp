@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <!-- persistence-unit name="jaoPersistDocumentos" transaction-type="RESOURCE_LOCAL"-->
+    <persistence-unit name="jaoPersistDocumentos">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!-- jta-data-source deve conter o mesmo nome definido em datasource jndi-name no arquivos standalone.xml -->
+		<jta-data-source>java:/PostgresDS</jta-data-source>
+        <class>com.jao.ejb.documentos.entitys.Documento</class>
+        <class>com.jao.ejb.documentos.entitys.DocumentoDoc</class>
+        <class>com.jao.ejb.documentos.entitys.DocumentoImg</class>
+        <!-- Aquí debes incluir todas las clases de entidad que desees manejar -->
+        
+        <properties>
+        	<!-- Otras propiedades de configuración de JPA -->
+    		<!-- property name="javax.persistence.schema-generation.database.action" value="create"/-->
+     		<property name="javax.persistence.schema-generation.database.action" value="none"/>
+            <!-- Configuración de la conexión a la base de datos -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/jaoDocumentos"/>
+            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            <property name="javax.persistence.jdbc.password" value="admin"/>
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            
+            <!-- Otras propiedades de configuración de JPA -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL95Dialect"/>
+            <property name="hibernate.show_sql" value="true"/> <!-- Muestra SQL en la consola -->
+            <property name="hibernate.format_sql" value="true"/> <!-- Formatea SQL para legibilidad -->
+             <!-- Generación del esquema de base de datos -->
+            <!-- property name="hibernate.hbm2ddl.auto" value="create-drop"/--> <!-- Crea las tablas automáticamente LA PRIMERA VEZ PARA GENERAR TABLAS LUEGO SE COMENTA PARA NO BORRAR EL MODELO Y RGs -->
+            <!--  la propiedad se pone update para que actualice-->
+            <!-- property name="hibernate.hbm2ddl.auto" value="create"/--><!-- se pone a validate para que solo valide el modelo de datos -->
+            <property name="hibernate.hbm2ddl.auto" value="none"/>
+            
+            <!-- Configurar el tipo de datos para la propiedad contenido -->
+		    <property name="hibernate.temp.use_jdbc_metadata_defaults" value="false"/>
+		    <property name="hibernate.jdbc.lob.non_contextual_creation" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

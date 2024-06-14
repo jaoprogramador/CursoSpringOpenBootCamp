@@ -1,0 +1,19 @@
+eclipse.preferences.version=1
+org.eclipse.jdt.core.builder.resourceCopyExclusionFilter=
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_HOME=C\:/Users/Guillermo/eclipse/eclipse/
+org.eclipse.jdt.core.classpathVariable.ECLIPSE_WORKSPACE=C\:/Users/Guillermo/workspace
+org.eclipse.jdt.core.classpathVariable.JRE_LIB=C\:/Program Files/Java/jdk-1.8/jre/lib/rt.jar
+org.eclipse.jdt.core.classpathVariable.JRE_SRC=C\:/Program Files/Java/jdk-1.8/src.zip
+org.eclipse.jdt.core.classpathVariable.JRE_SRCROOT=
+org.eclipse.jdt.core.classpathVariable.JUNIT_HOME=C\:/Users/Guillermo/eclipse/eclipse/plugins/org.junit_4.12.0.v201504281640/
+org.eclipse.jdt.core.classpathVariable.M2_REPO=C\:/Users/Guillermo/.m2/repository
+org.eclipse.jdt.core.classpathVariable.WEBAPP_LIBS=C\:/Users/Guillermo/eclipse/eclipse/configuration/org.eclipse.osgi/1004/0/.cp/lib
+org.eclipse.jdt.core.codeComplete.visibilityCheck=enabled
+org.eclipse.jdt.core.compiler.codegen.inlineJsrBytecode=enabled
+org.eclipse.jdt.core.compiler.codegen.targetPlatform=1.8
+org.eclipse.jdt.core.compiler.compliance=1.8
+org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
+org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
+org.eclipse.jdt.core.compiler.source=1.8
+org.eclipse.jdt.core.userLibrary.POSTGRESSSQL=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<userlibrary systemlibrary\="false" version\="2">\r\n\t<archive path\="/19EJBSessionDocumentos/ejbModule/META-INF/lib/postgresql-9.4-1206-jdbc42.jar"/>\r\n</userlibrary>\r\n
+org.eclipse.jdt.core.userLibrary.wildflyClientLib=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<userlibrary systemlibrary\="false" version\="2">\r\n\t<archive path\="/20EJBInvoquer/lib/19EJBSessionDocumentos.jar"/>\r\n\t<archive path\="/20EJBInvoquer/lib/jakarta.ejb-api-3.2.6.jar"/>\r\n\t<archive path\="/20EJBInvoquer/lib/javaee-api-8.0.jar"/>\r\n\t<archive path\="/20EJBInvoquer/lib/jboss-cli-client.jar"/>\r\n\t<archive path\="/20EJBInvoquer/lib/jboss-client.jar"/>\r\n\t<archive path\="/20EJBInvoquer/lib/jboss-logging-3.2.0.Final.jar"/>\r\n\t<archive path\="/20EJBInvoquer/lib/jboss-logging-3.2.1.Final.jar"/>\r\n\t<archive path\="/20EJBInvoquer/lib/wildfly-server-15.0.1.Final.jar"/>\r\n</userlibrary>\r\n

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.documentos.contentmanager.jao.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://service.documentos.contentmanager.jao.com" xmlns:intf="http://service.documentos.contentmanager.jao.com" xmlns:tns1="http://model.documentos.contentmanager.jao.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://service.documentos.contentmanager.jao.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://model.documentos.contentmanager.jao.com"/>
+   <element name="uploadFile">
+    <complexType>
+     <sequence>
+      <element name="documento" type="tns1:DocumentoDTO"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="uploadFileResponse">
+    <complexType>
+     <sequence>
+      <element name="uploadFileReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema elementFormDefault="qualified" targetNamespace="http://model.documentos.contentmanager.jao.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <complexType name="DocumentoDTO">
+    <sequence>
+     <element name="contenido" nillable="true" type="xsd:base64Binary"/>
+     <element name="extension" nillable="true" type="xsd:string"/>
+     <element name="fecha_creacion" nillable="true" type="xsd:dateTime"/>
+     <element name="id" nillable="true" type="xsd:long"/>
+     <element name="nombre" nillable="true" type="xsd:string"/>
+     <element name="tipo" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="uploadFileRequest">
+
+      <wsdl:part element="impl:uploadFile" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="uploadFileResponse">
+
+      <wsdl:part element="impl:uploadFileResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="Documentos">
+
+      <wsdl:operation name="uploadFile">
+
+         <wsdl:input message="impl:uploadFileRequest" name="uploadFileRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:uploadFileResponse" name="uploadFileResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DocumentosSoapBinding" type="impl:Documentos">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="uploadFile">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="uploadFileRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="uploadFileResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DocumentosService">
+
+      <wsdl:port binding="impl:DocumentosSoapBinding" name="Documentos">
+
+         <wsdlsoap:address location="http://localhost:10931/19ContentManagerSOAP/services/Documentos"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

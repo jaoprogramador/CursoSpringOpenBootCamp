@@ -1,0 +1,44 @@
+127.0.0.1 - - [12/Mar/2024:20:38:39 +0100] "GET / HTTP/1.1" 404 687
+127.0.0.1 - - [12/Mar/2024:20:49:45 +0100] "GET / HTTP/1.1" 404 687
+127.0.0.1 - - [12/Mar/2024:20:51:13 +0100] "POST /17ValidaDNIWSSOAP/services/AdminService HTTP/1.0" 200 291
+127.0.0.1 - - [12/Mar/2024:20:51:13 +0100] "POST /17ValidaDNIWSSOAP/services/AdminService HTTP/1.0" 200 4264
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:20:54:07 +0100] "-" 400 1884
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:20:54:07 +0100] "-" 400 1884
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:20:54:07 +0100] "-" 400 1884
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:20:54:07 +0100] "-" 400 1884
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:20:56:01 +0100] "GET /17ValidaDNIWSSOAP?wsdl HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:20:56:01 +0100] "GET /17ValidaDNIWSSOAP/?wsdl HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:20:56:01 +0100] "GET /favicon.ico HTTP/1.1" 404 698
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:20:56:07 +0100] "GET / HTTP/1.1" 404 687
+127.0.0.1 - - [12/Mar/2024:20:57:19 +0100] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:20:59:18 +0100] "GET /ValidarDNIWS HTTP/1.1" 404 699
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:20:59:24 +0100] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:01:31 +0100] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:04:20 +0100] "GET /17ValidaDNIWSSOAP HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:04:20 +0100] "GET /17ValidaDNIWSSOAP/ HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:10:03 +0100] "GET /18ValidarDNISWSOAP HTTP/1.1" 404 705
+127.0.0.1 - - [12/Mar/2024:21:12:06 +0100] "GET / HTTP/1.1" 404 687
+127.0.0.1 - - [12/Mar/2024:21:24:42 +0100] "GET / HTTP/1.1" 404 687
+127.0.0.1 - - [12/Mar/2024:21:25:48 +0100] "GET / HTTP/1.1" 404 687
+127.0.0.1 - - [12/Mar/2024:21:25:48 +0100] "POST /17ValidaDNIWSSOAP/services/AdminService HTTP/1.0" 200 291
+127.0.0.1 - - [12/Mar/2024:21:25:48 +0100] "POST /17ValidaDNIWSSOAP/services/AdminService HTTP/1.0" 200 4264
+127.0.0.1 - - [12/Mar/2024:21:26:20 +0100] "GET / HTTP/1.1" 404 687
+127.0.0.1 - - [12/Mar/2024:21:26:26 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/Result.jsp HTTP/1.1" 200 118
+127.0.0.1 - - [12/Mar/2024:21:26:26 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/Method.jsp HTTP/1.1" 200 437
+127.0.0.1 - - [12/Mar/2024:21:26:27 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/Input.jsp HTTP/1.1" 200 127
+127.0.0.1 - - [12/Mar/2024:21:26:28 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/TestClient.jsp HTTP/1.1" 200 586
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:26:29 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/TestClient.jsp?endpoint=http://localhost:10931/17ValidaDNIWSSOAP/services/ValidarDNIWS HTTP/1.1" 200 662
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:26:30 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/Method.jsp HTTP/1.1" 200 437
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:26:30 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/Input.jsp HTTP/1.1" 200 127
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:26:30 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/Result.jsp?endpoint=http://localhost:10931/17ValidaDNIWSSOAP/services/ValidarDNIWS& HTTP/1.1" 200 118
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:27:24 +0100] "GET / HTTP/1.1" 404 687
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:27:30 +0100] "GET /17ValidaDNIWSSOAPClient HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:27:30 +0100] "GET /17ValidaDNIWSSOAPClient/ HTTP/1.1" 404 715
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:27:36 +0100] "GET /17ValidaDNIWSSOAP HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:27:36 +0100] "GET /17ValidaDNIWSSOAP/ HTTP/1.1" 404 709
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:27:51 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/Input.jsp?method=2 HTTP/1.1" 200 295
+127.0.0.1 - - [12/Mar/2024:21:28:22 +0100] "GET /17ValidaDNIWSSOAP/services/ValidarDNIWS HTTP/1.1" 200 136
+127.0.0.1 - - [12/Mar/2024:21:28:22 +0100] "GET /favicon.ico HTTP/1.1" 404 698
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:29:48 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/Input.jsp?method=10 HTTP/1.1" 200 296
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:29:51 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/Input.jsp?method=10 HTTP/1.1" 200 296
+0:0:0:0:0:0:0:1 - - [12/Mar/2024:21:29:53 +0100] "GET /17ValidaDNIWSSOAPClient/sampleValidarDNIWSProxy/Input.jsp?method=13 HTTP/1.1" 200 444

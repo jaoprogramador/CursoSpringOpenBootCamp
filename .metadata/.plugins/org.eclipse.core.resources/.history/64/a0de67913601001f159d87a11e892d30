@@ -1,0 +1,23 @@
+<project name="CompilarProyecto" default="compile">
+
+    <property name="project.dir" value="C:/Users/Guillermo/workspace/19EJBSessionDocumentos"/>
+    <property name="output.dir" value="C:/Users/Guillermo/workspace/EJBInvoquer/lib"/>
+    <property name="lib.dir" value="${project.dir}/ejbModule/META-INF/lib"/>
+
+    <target name="compile" description="Compile Java source files">
+    	<echo message="Compilando INI..."/>
+        <mkdir dir="${output.dir}"/>
+        <javac srcdir="${project.dir}/ejbModule" destdir="${output.dir}" includeantruntime="false">
+            <classpath>
+                <!-- Add your project dependencies -->
+                <fileset dir="${lib.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+                <pathelement location="C:/Program Files/Java/jdk-1.8/lib/tools.jar"/>
+                <!-- Add any other required JARs or libraries -->
+            </classpath>
+        </javac>
+        <echo message="Compilando FIN!!!"/>
+    </target>
+
+</project>

@@ -1,0 +1,6 @@
+com\jao\spring\ejemplo\controller\SaludoController.class
+com\jao\spring\ejemplo\entities\Disco.class
+com\jao\spring\ejemplo\ObRestDatajpaApplication.class
+com\jao\spring\ejemplo\repository\DiscoMngRepository.class
+com\jao\spring\ejemplo\controller\DiscoController.class
+com\jao\spring\ejemplo\service\DiscoService.class

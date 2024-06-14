@@ -1,0 +1,52 @@
+<project name="DeployEAR" basedir="." default="deploy-and-start">
+
+    <!-- Definición de propiedades -->
+    <property name="ear.source.dir" value="C:/Users/Guillermo/workspace/19EJBSessionDocumentosEAR"/>
+    <property name="wildfly.dir" value="C:/Users/Guillermo/wildfly-15.0.1.Final"/>
+    <property name="wildfly.deploy.dir" value="${wildfly.dir}/standalone/deployments"/>
+    <property name="ear.file.name" value="19EJBSessionDocumentosEAR.ear"/>
+
+    <!-- Target para compilar y empaquetar el archivo EAR -->
+    <target name="compile-and-package-ear">
+        <echo message="Compilando y empaquetando el archivo EAR..."/>
+        <!-- Elimina el archivo EAR si existe -->
+        <delete file="${ear.source.dir}/${ear.file.name}"/>
+        <!-- Crea una nueva carpeta 19EJBSessionDocumentosEAR.ear -->
+        <mkdir dir="${ear.source.dir}/${ear.file.name}"/>
+        <!-- Copia los archivos EJB al interior del archivo EAR -->
+        <copy todir="${ear.source.dir}/${ear.file.name}">
+            <fileset dir="${ear.source.dir}/ejbModule"/>
+        </copy>
+        <!-- Crea el archivo application.xml -->
+        <echo file="${ear.source.dir}/${ear.file.name}/META-INF/application.xml" message='<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd" id="Application_ID" version="7">
+  <display-name>19EJBSessionDocumentosEAR</display-name>
+  <module>
+    <ejb>19EJBSessionDocumentos.jar</ejb>
+  </module>
+</application>'/>
+        <!-- Empaqueta el archivo EAR -->
+        <zip destfile="${ear.source.dir}/${ear.file.name}.ear" basedir="${ear.source.dir}/${ear.file.name}"/>
+    </target>
+
+    <!-- Target para copiar el archivo EAR al directorio de despliegue de WildFly -->
+    <target name="deploy-ear" depends="compile-and-package-ear">
+        <echo message="Copiando el archivo EAR a la carpeta de despliegue de WildFly..."/>
+        <copy file="${ear.source.dir}/${ear.file.name}.ear" todir="${wildfly.deploy.dir}"/>
+    </target>
+
+    <!-- Target para iniciar el servidor WildFly -->
+    <target name="start-wildfly">
+        <echo message="Iniciando el servidor WildFly..."/>
+        <exec executable="cmd" dir="${wildfly.dir}/bin">
+            <arg value="/c"/>
+            <arg value="standalone.bat"/>
+        </exec>
+    </target>
+
+    <!-- Target que ejecuta la compilación, copia del EAR y luego inicia WildFly -->
+    <target name="deploy-and-start" depends="deploy-ear,start-wildfly">
+        <echo message="Se ha completado la compilación, empaquetado y despliegue del archivo EAR, y se ha iniciado el servidor WildFly."/>
+    </target>
+
+</project>

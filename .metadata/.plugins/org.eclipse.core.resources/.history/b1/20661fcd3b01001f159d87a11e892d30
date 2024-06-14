@@ -1,0 +1,75 @@
+<!--project name="CompilarProyecto" default="compile">
+
+    <property name="project.dir" value="C:/Users/Guillermo/workspace/19EJBSessionDocumentos"/>
+    <property name="output.dir" value="C:/Users/Guillermo/workspace/EJBInvoquer/lib"/>
+    <property name="lib.dir" value="${project.dir}/ejbModule/META-INF/lib"/>
+    <property name="wildfly.home" value="C:/Users/Guillermo/wildfly-15.0.1.Final"/>
+
+    <target name="compile" description="Compile Java source files">
+        <mkdir dir="${output.dir}"/>
+        <javac srcdir="${project.dir}/ejbModule" destdir="${output.dir}" includeantruntime="false">
+            <classpath>
+            
+                <fileset dir="${lib.dir}">
+                    <include name="**/*.jar"/>
+                </fileset>
+            
+                <fileset dir="${wildfly.home}/modules" includes="**/*.jar"/>
+            
+                <pathelement location="C:/Program Files/Java/jdk-1.8/lib/tools.jar"/>
+            </classpath>
+        </javac>
+    </target>
+<echo message="Move the generated JAR to the desired location with the desired name"/>
+      
+    <target name="moveJar" depends="compile">
+        <move file="${output.dir}/ejbModule.jar" tofile="${output.dir}/19EJBSessionDocumentos.jar"/>
+    </target>
+
+</project-->
+
+	<project name="AutomatizarDespliegue" default="deploy">
+
+	    <!-- Definir las rutas -->
+	    <property name="project.ejb.dir" value="C:/Users/Guillermo/workspace/19EJBSessionDocumentos"/>
+	    <property name="project.ear.dir" value="C:/Users/Guillermo/workspace/19EJBSessionDocumentosEAR"/>
+	    <property name="output.dir" value="${project.ejb.dir}/build"/>
+	    <property name="lib.dir" value="${project.ejb.dir}/lib"/>
+	    <property name="wildfly.deploy.dir" value="C:/Users/Guillermo/wildfly-15.0.1.Final/standalone/deployments"/>
+
+	    <!-- Compilar el proyecto EJB -->
+	    <target name="compile" description="Compile the EJB project">
+	        <mkdir dir="${output.dir}"/>
+	        <javac srcdir="${project.ejb.dir}/src" destdir="${output.dir}" includeantruntime="false">
+	            <classpath>
+	                <fileset dir="${lib.dir}" includes="**/*.jar"/>
+	                <!-- Agregar cualquier otra JAR o biblioteca necesaria -->
+	            </classpath>
+	        </javac>
+	    </target>
+
+	    <!-- Empaquetar el proyecto EJB en un archivo JAR -->
+	    <target name="jar" depends="compile" description="Package the EJB project into a JAR">
+	        <jar destfile="${output.dir}/19EJBSessionDocumentos.jar" basedir="${output.dir}">
+	            <fileset dir="${output.dir}" excludes="**/*.class"/>
+	        </jar>
+	    </target>
+
+	    <!-- Empaquetar el proyecto EAR y agregar el archivo JAR -->
+	    <target name="ear" depends="jar" description="Package the EAR project and add the JAR">
+	        <ear destfile="${project.ear.dir}/19EJBSessionDocumentosEAR.ear">
+	            <fileset dir="${project.ear.dir}/src">
+	                <include name="**/*.xml"/>
+	            </fileset>
+	            <fileset dir="${output.dir}">
+	                <include name="*.jar"/>
+	            </fileset>
+	        </ear>
+	    </target>
+
+	    <!-- Desplegar el proyecto EAR en Wildfly -->
+	    <target name="deploy" depends="ear" description="Deploy the EAR project to Wildfly">
+	        <copy file="${project.ear.dir}/19EJBSessionDocumentosEAR.ear" todir="${wildfly.deploy.dir}"/>
+	    </target>
+
+	</project>

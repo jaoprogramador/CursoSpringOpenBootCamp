@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from DocumentosService WSDL service -->
+
+  <service name="Documentos" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://service.documentos.contentmanager.jao.com"/>
+      <parameter name="wsdlServiceElement" value="DocumentosService"/>
+      <parameter name="schemaQualified" value="http://service.documentos.contentmanager.jao.com,http://model.documentos.contentmanager.jao.com"/>
+      <parameter name="wsdlServicePort" value="Documentos"/>
+      <parameter name="className" value="com.jao.contentmanager.documentos.service.Documentos"/>
+      <parameter name="wsdlPortType" value="Documentos"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://service.documentos.contentmanager.jao.com" xmlns:retNS="http://service.documentos.contentmanager.jao.com" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="uploadFile" qname="operNS:uploadFile" returnQName="retNS:uploadFileReturn" returnType="rtns:string" soapAction="">
+        <parameter xmlns:pns="http://service.documentos.contentmanager.jao.com" xmlns:tns="http://model.documentos.contentmanager.jao.com" qname="pns:documento" type="tns:DocumentoDTO"/>
+      </operation>
+      <parameter name="allowedMethods" value="uploadFile"/>
+
+      <typeMapping xmlns:ns="http://model.documentos.contentmanager.jao.com" qname="ns:DocumentoDTO" type="java:com.jao.contentmanager.documentos.model.DocumentoDTO" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

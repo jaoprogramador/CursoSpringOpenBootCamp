@@ -1,0 +1,57 @@
+<project name="ActualizarProyecto" default="actualizar">
+
+    <!-- Definir propiedades -->
+    <property name="proyecto_ejb" value="C:\Users\Guillermo\workspace\19EJBSessionDocumentos"/>
+    <property name="proyecto_cliente" value="C:\Users\Guillermo\workspace\EJBInvoquer"/>
+    <property name="wildfly_dir" value="C:\Users\Guillermo\wildfly-15.0.1.Final"/>
+
+    <!-- Definir nombre del archivo EAR -->
+    <property name="ear_file" value="${ant.project.name}.ear"/>
+
+    <!-- Definir nombre del archivo JAR cliente -->
+    <property name="jar_cliente" value="19EJBSessionDocumentos.jar"/>
+
+    <target name="actualizar" description="Actualizar proyecto EJB y generar JAR cliente">
+        <!-- Refrescar cambios del proyecto EJB -->
+        <exec executable="cmd" osfamily="windows">
+            <arg value="/c"/>
+            <arg value="ant"/>
+            <arg value="-f"/>
+            <arg value="${proyecto_ejb}\build.xml"/>
+        </exec>
+
+        <!-- Limpiar proyecto EJB -->
+        <exec executable="cmd" osfamily="windows">
+            <arg value="/c"/>
+            <arg value="ant"/>
+            <arg value="-f"/>
+            <arg value="${proyecto_ejb}\build.xml"/>
+            <arg value="clean"/>
+        </exec>
+
+        <!-- Generar JAR cliente -->
+        <exec executable="cmd" osfamily="windows">
+            <arg value="/c"/>
+            <arg value="ant"/>
+            <arg value="-f"/>
+            <arg value="${proyecto_cliente}\build.xml"/>
+        </exec>
+
+        <!-- Empaquetar en EAR -->
+        <exec executable="cmd" osfamily="windows">
+            <arg value="/c"/>
+            <arg value="ant"/>
+            <arg value="-f"/>
+            <arg value="${proyecto_cliente}\build.xml"/>
+            <arg value="empaquetar_ear"/>
+        </exec>
+
+        <!-- Eliminar el archivo EAR antiguo del servidor -->
+        <delete file="${wildfly_dir}\standalone\deployments\${ear_file}"/>
+
+        <!-- Copiar EAR al directorio de despliegue de WildFly -->
+        <copy file="${proyecto_cliente}\dist\${ear_file}" todir="${wildfly_dir}\standalone\deployments"/>
+
+    </target>
+
+</project>
