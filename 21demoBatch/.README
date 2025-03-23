@@ -1,0 +1,7 @@
+EJERCICIO
+https://www.youtube.com/watch?v=5SW_lsPzNr0
+ARQUITECTURA EXAGONAL EN 10 min 
+https://www.youtube.com/watch?v=eNFAJbWCSww
+kafka
+
+JOB que lee los empleados del fichero sample-data.csv y los guarda en la tabla EMPLEADO de BD de memoria pasándolos a mayúsculas
