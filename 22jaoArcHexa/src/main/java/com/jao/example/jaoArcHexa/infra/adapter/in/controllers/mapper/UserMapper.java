@@ -25,4 +25,5 @@ public class UserMapper {
 				.fechaAlta(new Date())
 				.build();
 	}
+	
 }
