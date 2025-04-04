@@ -1,0 +1,19 @@
+services:
+  rabbit:
+    image: rabbitmq:4.0-rc-management
+    container_name: rabbit
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: jaoprogramador
+      RABBITMQ_DEFAULT_PASS: jaoprogramador1234
+    volumes:
+      - ../23RabbitMQ/data/:/var/lib/rabbitmq/
+      - ../23RabbitMQ/log/:/var/log/rabbitmq/
+    networks:
+      - 23RabbitMQ_network
+
+networks:
+  23RabbitMQ_network:
+    driver: bridge

@@ -1,0 +1,33 @@
+INI
+	arrancar docker desctop
+	
+	arrancar el contenedor desde el directorio donde tenemos docker-compose.yml abrimos una consola y ejecutamos :
+		docker compose up
+	arrancar el main del CONSUMER. Vamos al main y run as java aplication
+	arrancar el main del  PROVIDER
+
+
+POSTMAN
+
+POST http://localhost:8080/publish/client
+		{
+			"dni" : "45886521Q",
+			"fullName" : "David De Pedro",
+			"adress" : "C Correos 12, Bilbao",
+			"numberCount":1
+		}
+
+POST    http://localhost:8080/publish/order
+
+		{
+			"id":"01",
+			"productDesc":"Zapatillas nicke cortez",
+			"number":1
+		}
+	
+	
+MATAR PUERTO 8080 si no deja abrir
+netstat -ano | findstr :8080
+taskkill /PID <PID_ENCONTRADO> /F
+
+

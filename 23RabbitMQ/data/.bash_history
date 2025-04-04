@@ -1,0 +1,3 @@
+rabbitmqctl list_users
+rabbitmqctl list_user_permissions jaoprogramador
+exit

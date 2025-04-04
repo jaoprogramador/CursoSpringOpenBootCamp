@@ -1,0 +1,3 @@
+VHOST: /
+QUEUE: client_queue
+INDEX: v2
