@@ -1,0 +1,326 @@
+
+[
+	{
+	  "titulo": "Inception",
+	  "genero": "Ciencia Ficción",
+	  "duracion": 148.0,
+	  "productora": {
+	    "nombre": "Warner Bros"
+	  },
+	  "actores": [
+	    {
+	      "nombre": "Leonardo DiCaprio",
+	      "edad": 48
+	    },
+	    {
+	      "nombre": "Joseph Gordon-Levitt",
+	      "edad": 43
+	    }
+	  ]
+	},
+	
+  {
+    "titulo": "El Club de la Lucha",
+    "genero": "Drama",
+    "duracion": 139,
+    "productora": {
+      "nombre": "20th Century Fox"
+    },
+    "actores": [
+      {
+        "nombre": "Brad Pitt",
+        "edad": 60
+      },
+      {
+        "nombre": "Edward Norton",
+        "edad": 54
+      }
+    ]
+  },
+  {
+    "titulo": "El Golpe",
+    "genero": "Crimen",
+    "duracion": 129,
+    "productora": {
+      "nombre": "Universal Pictures"
+    },
+    "actores": [
+      {
+        "nombre": "Paul Newman",
+        "edad": 83
+      },
+      {
+        "nombre": "Robert Redford",
+        "edad": 87
+      }
+    ]
+  },
+  {
+    "titulo": "Sonrisas y Lágrimas",
+    "genero": "Musical",
+    "duracion": 172,
+    "productora": {
+      "nombre": "20th Century Fox"
+    },
+    "actores": [
+      {
+        "nombre": "Julie Andrews",
+        "edad": 88
+      },
+      {
+        "nombre": "Christopher Plummer",
+        "edad": 91
+      }
+    ]
+  },
+  {
+    "titulo": "Gladiator",
+    "genero": "Acción",
+    "duracion": 155,
+    "productora": {
+      "nombre": "DreamWorks"
+    },
+    "actores": [
+      {
+        "nombre": "Russell Crowe",
+        "edad": 59
+      },
+      {
+        "nombre": "Joaquin Phoenix",
+        "edad": 49
+      }
+    ]
+  },
+  {
+    "titulo": "Troya",
+    "genero": "Acción",
+    "duracion": 163,
+    "productora": {
+      "nombre": "Warner Bros"
+    },
+    "actores": [
+      {
+        "nombre": "Brad Pitt",
+        "edad": 60
+      },
+      {
+        "nombre": "Eric Bana",
+        "edad": 55
+      }
+    ]
+  },
+  {
+    "titulo": "El Gran Lebowski",
+    "genero": "Comedia",
+    "duracion": 117,
+    "productora": {
+      "nombre": "PolyGram Filmed Entertainment"
+    },
+    "actores": [
+      {
+        "nombre": "Jeff Bridges",
+        "edad": 74
+      },
+      {
+        "nombre": "John Goodman",
+        "edad": 71
+      }
+    ]
+  },
+  {
+    "titulo": "Matrix",
+    "genero": "Ciencia Ficción",
+    "duracion": 136,
+    "productora": {
+      "nombre": "Warner Bros"
+    },
+    "actores": [
+      {
+        "nombre": "Keanu Reeves",
+        "edad": 59
+      },
+      {
+        "nombre": "Laurence Fishburne",
+        "edad": 62
+      }
+    ]
+  },
+  {
+    "titulo": "Abierto hasta el amanecer",
+    "genero": "Terror",
+    "duracion": 108,
+    "productora": {
+      "nombre": "Dimension Films"
+    },
+    "actores": [
+      {
+        "nombre": "George Clooney",
+        "edad": 62
+      },
+      {
+        "nombre": "Quentin Tarantino",
+        "edad": 61
+      }
+    ]
+  },
+  {
+    "titulo": "Asesinos Natos",
+    "genero": "Crimen",
+    "duracion": 118,
+    "productora": {
+      "nombre": "Warner Bros"
+    },
+    "actores": [
+      {
+        "nombre": "Woody Harrelson",
+        "edad": 62
+      },
+      {
+        "nombre": "Juliette Lewis",
+        "edad": 50
+      }
+    ]
+  },
+  {
+    "titulo": "El Silencio de los Corderos",
+    "genero": "Thriller",
+    "duracion": 118,
+    "productora": {
+      "nombre": "Orion Pictures"
+    },
+    "actores": [
+      {
+        "nombre": "Jodie Foster",
+        "edad": 61
+      },
+      {
+        "nombre": "Anthony Hopkins",
+        "edad": 86
+      }
+    ]
+  },
+  {
+    "titulo": "Malditos Bastardos",
+    "genero": "Acción",
+    "duracion": 153,
+    "productora": {
+      "nombre": "Universal Pictures"
+    },
+    "actores": [
+      {
+        "nombre": "Brad Pitt",
+        "edad": 60
+      },
+      {
+        "nombre": "Christoph Waltz",
+        "edad": 67
+      }
+    ]
+  },
+  {
+    "titulo": "Reservoir Dogs",
+    "genero": "Crimen",
+    "duracion": 99,
+    "productora": {
+      "nombre": "Miramax"
+    },
+    "actores": [
+      {
+        "nombre": "Harvey Keitel",
+        "edad": 84
+      },
+      {
+        "nombre": "Tim Roth",
+        "edad": 62
+      }
+    ]
+  },
+  {
+    "titulo": "Pulp Fiction",
+    "genero": "Crimen",
+    "duracion": 154,
+    "productora": {
+      "nombre": "Miramax"
+    },
+    "actores": [
+      {
+        "nombre": "John Travolta",
+        "edad": 70
+      },
+      {
+        "nombre": "Samuel L. Jackson",
+        "edad": 75
+      }
+    ]
+  },
+  {
+    "titulo": "The Wall",
+    "genero": "Musical",
+    "duracion": 95,
+    "productora": {
+      "nombre": "MGM"
+    },
+    "actores": [
+      {
+        "nombre": "Bob Geldof",
+        "edad": 72
+      }
+    ]
+  },
+  {
+    "titulo": "Tiburón",
+    "genero": "Terror",
+    "duracion": 124,
+    "productora": {
+      "nombre": "Universal Pictures"
+    },
+    "actores": [
+      {
+        "nombre": "Roy Scheider",
+        "edad": 75
+      }
+    ]
+  },
+  {
+    "titulo": "Los Goonies",
+    "genero": "Aventura",
+    "duracion": 114,
+    "productora": {
+      "nombre": "Warner Bros"
+    },
+    "actores": [
+      {
+        "nombre": "Sean Astin",
+        "edad": 53
+      }
+    ]
+  },
+  {
+    "titulo": "Forrest Gump",
+    "genero": "Drama",
+    "duracion": 142,
+    "productora": {
+      "nombre": "Paramount Pictures"
+    },
+    "actores": [
+      {
+        "nombre": "Tom Hanks",
+        "edad": 67
+      }
+    ]
+  },
+  {
+    "titulo": "El Rey León",
+    "genero": "Animación",
+    "duracion": 88,
+    "productora": {
+      "nombre": "Disney"
+    },
+    "actores": [
+      {
+        "nombre": "Matthew Broderick",
+        "edad": 62
+      }
+    ]
+  }
+]

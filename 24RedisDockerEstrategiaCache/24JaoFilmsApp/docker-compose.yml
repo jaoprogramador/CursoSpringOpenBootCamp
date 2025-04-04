@@ -1,0 +1,9 @@
+
+services:
+  redis:
+    image: redis:6.2-alpine
+    container_name: myRedisPeliculas
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --loglevel warning --requirepass jaoprogramador1234
